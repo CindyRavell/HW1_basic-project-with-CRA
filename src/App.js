@@ -18,25 +18,16 @@ const props = {
 class App extends React.Component {
   constructor(props){
     super(props)
-    this.state = true
-    this.render = this.render
+    this.state = {status:true}
   }
-  
+
   activeHobby=()=>{
-    this.state = true
-    const element = this.render()
-    ReactDOM.render(
-      element,
-      document.getElementById('root')
-    );
+    this.setState({status:true})
+    
   }
   inactiveHobby=()=>{
-    this.state = false
-    const element = this.render()
-    ReactDOM.render(
-      element,
-      document.getElementById('root')
-    );
+    this.setState({status:false})
+    
   }
 
 
@@ -57,7 +48,7 @@ class App extends React.Component {
           <button onClick={this.inactiveHobby}>Inactive</button>
         </div>
       <Hobbies props={propsHob}
-              showText= {this.state}
+              showText= {this.state.status}
       />
       </header>
     </div>
